@@ -1,0 +1,50 @@
+'use strict';
+
+var test = require('ava');
+var skypeRegex = require('./');
+
+test('match skype URLs', function (t) {
+	var fixtures = [
+		'callto:foobar123',
+		'callto:foo.bar123',
+		'callto:foo,bar123',
+		'callto:foo_bar123',
+		'skype:foobar123',
+		'skype:foo.bar123',
+		'skype:foo,bar123',
+		'skype:foo_bar123',
+	];
+
+	fixtures.forEach(function (el) {
+		if (!skypeRegex().exec(el)) {
+			t.assert(false, el);
+			return;
+		}
+
+		t.assert(skypeRegex().exec(el)[0] === el, el);
+	});
+
+	t.end();
+});
+
+test('do not match skype URLs', function (t) {
+	var fixtures = [
+		'callto:',
+		'callto:foo*bar',
+		'callto:foo/bar',
+		'skype:',
+		'skype:foo*bar',
+		'skype:foo/bar'
+	];
+
+	fixtures.forEach(function (el) {
+		if (!skypeRegex().exec(el)) {
+			t.assert(true);
+			return;
+		}
+
+		t.assert(skypeRegex().exec(el)[0] !== el, el);
+	});
+
+	t.end();
+});

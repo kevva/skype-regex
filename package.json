@@ -1,0 +1,30 @@
+{
+  "name": "skype-regex",
+  "version": "1.0.0",
+  "description": "Regular expression for matching Skype URLs",
+  "license": "MIT",
+  "repository": "kevva/skype-regex",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "regex",
+    "skype",
+    "string",
+    "url"
+  ],
+  "devDependencies": {
+    "ava": "^0.0.4"
+  }
+}
