@@ -13,6 +13,11 @@ test('match skype URLs', function (t) {
 		'skype:foo.bar123',
 		'skype:foo,bar123',
 		'skype:foo_bar123',
+		'skype:foobar123?add',
+		'skype:foobar123?call',
+		'skype:foobar123?chat',
+		'skype:foobar123?sendfile',
+		'skype:foobar123?userinfo'
 	];
 
 	fixtures.forEach(function (el) {
