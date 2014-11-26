@@ -16,11 +16,8 @@ var skypeRegex = require('skype-regex');
 skypeRegex().test('skype:foobar123?call');
 //=> true
 
-skypeRegex().exec('Call to foobar skype:foobar123?call')[0].trim();
-//=> skype:foobar123?call
-
-'Multiple callto:foobar123 skype:foobar123?chat Skype URLs'.match(skypeRegex());
-//=> ['callto:foobar123', 'skype:foobar123?chat']
+'foo skype:foobar123?chat bar callto:foobar123'.match(skypeRegex());
+//=> ['skype:foobar123?chat', 'callto:foobar123']
 ```
 
 ## License
