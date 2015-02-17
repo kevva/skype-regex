@@ -16,10 +16,10 @@ var skypeRegex = require('skype-regex');
 skypeRegex().test('skype:foobar123?call foo bar');
 //=> true
 
-skypeRegex({ exact: true }).test('skype:foobar123?call foo bar');
+skypeRegex({exact: true}).test('skype:foobar123?call foo bar');
 //=> false
 
-skypeRegex({ exact: true }).test('skype:foobar123?call');
+skypeRegex({exact: true}).test('skype:foobar123?call');
 //=> true
 
 'foo skype:foobar123?chat bar callto:foobar123'.match(skypeRegex());
