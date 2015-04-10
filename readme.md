@@ -2,11 +2,13 @@
 
 > Regular expression for matching Skype URLs
 
+
 ## Install
 
-```sh
+```
 $ npm install --save skype-regex
 ```
+
 
 ## Usage
 
@@ -25,6 +27,22 @@ skypeRegex({exact: true}).test('skype:foobar123?call');
 'foo skype:foobar123?chat bar callto:foobar123'.match(skypeRegex());
 //=> ['skype:foobar123?chat', 'callto:foobar123']
 ```
+
+
+## API
+
+### skypeRegex(options)
+
+Returns a regex for matching Skype URLs.
+
+#### options.exact
+
+Type: `boolean`  
+Default: `false` *(Matches any Skype URLs in a string)*
+
+Only match an exact string.  
+Useful with `RegExp#test` to check if a string is a Skype URL.
+
 
 ## License
 
