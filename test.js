@@ -1,5 +1,4 @@
 'use strict';
-
 var test = require('ava');
 var skypeRegex = require('./');
 
@@ -21,12 +20,7 @@ test('match skype URLs', function (t) {
 	];
 
 	fixtures.forEach(function (el) {
-		if (!skypeRegex().exec(el)) {
-			t.assert(false, el);
-			return;
-		}
-
-		t.assert(skypeRegex().exec(el)[0] === el, el);
+		t.assert(skypeRegex({exact: true}).test(el), el);
 	});
 
 	t.end();
@@ -43,12 +37,7 @@ test('do not match skype URLs', function (t) {
 	];
 
 	fixtures.forEach(function (el) {
-		if (!skypeRegex().exec(el)) {
-			t.assert(true);
-			return;
-		}
-
-		t.assert(skypeRegex().exec(el)[0] !== el, el);
+		t.assert(!skypeRegex({exact: true}).test(el), el);
 	});
 
 	t.end();
