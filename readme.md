@@ -13,7 +13,7 @@ $ npm install --save skype-regex
 ## Usage
 
 ```js
-var skypeRegex = require('skype-regex');
+const skypeRegex = require('skype-regex');
 
 skypeRegex().test('skype:foobar123?call foo bar');
 //=> true
@@ -35,12 +35,14 @@ skypeRegex({exact: true}).test('skype:foobar123?call');
 
 Returns a regex for matching Skype URLs.
 
-#### options.exact
+#### options
 
-Type: `boolean`  
+##### exact
+
+Type: `Boolean`<br>
 Default: `false` *(Matches any Skype URLs in a string)*
 
-Only match an exact string.  
+Only match an exact string.
 Useful with `RegExp#test` to check if a string is a Skype URL.
 
 
